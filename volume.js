@@ -5,4 +5,12 @@ const getVolumeChanges = async () => {
     const data = await response.json();
 
     const volumeIncreases = {};
+
+    data.forEach((symbol) => {
+        const symbolVolume = parseFloat(symbol.volume);
+        const symbolSymbol = symbol.symbol;
+        const symbolPrevDayVolume = parseFloat(symbol.volume[1]);
+        const symbolVolumeChange = (symbolVolume - symbolPrevDayVolume) / symbolPrevDayVolume * 100;
+    });
+    console.log(symbol)
 }  
