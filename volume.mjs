@@ -11,6 +11,12 @@ const getVolumeChanges = async () => {
         const symbolSymbol = symbol.symbol;
         const symbolPrevDayVolume = parseFloat(symbol.volume[1]);
         const symbolVolumeChange = (symbolVolume - symbolPrevDayVolume) / symbolPrevDayVolume * 100;
+        
+        console.log(symbol)
     });
-    console.log(symbol)
-}  
+}; 
+
+getVolumeChanges();
+
+
+//node --experimental-modules arquivo.mjs
