@@ -12,9 +12,13 @@ const getVolumeChanges = async () => {
         const symbolPrevDayVolume = parseFloat(symbol.volume[1]);
         const symbolVolumeChange = (symbolVolume - symbolPrevDayVolume) / symbolPrevDayVolume * 100;
         
-        console.log(symbol)
+       // Verifica se  teve um aumento no volume de negociação 
+    if (symbolVolumeChange > 0 && symbolVolumeChange !== Infinity && symbolVolumeChange !== -Infinity && symbolVolumeChange !== NaN) {
+        volumeIncreases[symbolSymbol] = symbolVolumeChange;
+        console.log(symbolVolumeChange)
+      }
     });
-}; 
+}
 
 getVolumeChanges();
 
