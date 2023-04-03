@@ -15,9 +15,11 @@ const getVolumeChanges = async () => {
        // Verifica se  teve um aumento no volume de negociação 
     if (symbolVolumeChange > 0 && symbolVolumeChange !== Infinity && symbolVolumeChange !== -Infinity && symbolVolumeChange !== NaN) {
         volumeIncreases[symbolSymbol] = symbolVolumeChange;
-        console.log(symbolVolumeChange)
+        
       }
     });
+    const sortedVolumeIncreases = Object.entries(volumeIncreases).sort((a, b) => b[1] - a[1]);
+    console.log(sortedVolumeIncreases)
 }
 
 getVolumeChanges();
